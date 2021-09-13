@@ -18,7 +18,6 @@ const ListTodos = (props) => {
                 index: index,
                 status: !item,
               };
-              console.log(props);
               props.markTodoStatus(data);
             }}
           />
