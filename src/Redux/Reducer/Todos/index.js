@@ -8,7 +8,7 @@ const initialState = {
       priority: "Important",
     },
     {
-      task: "Get the groceries",
+      task: "Get the groceries 2",
       status: false,
       priority: "Important",
     },

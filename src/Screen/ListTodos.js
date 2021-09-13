@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { markTodoStatus } from "../Redux/Actions/Todo";
 
 const ListTodos = (props) => {
+  console.log(props.todos);
   const columns = [
     {
       title: "Status",
@@ -12,6 +13,7 @@ const ListTodos = (props) => {
       render: (item, data, index) => {
         return (
           <Checkbox
+            defaultChecked={item}
             value={item}
             onChange={() => {
               let data = {
@@ -36,7 +38,6 @@ const ListTodos = (props) => {
       key: "priority",
     },
   ];
-  console.log(props.todos);
   return (
     <div style={{ marginLeft: 300, marginTop: 20, marginRight: 300 }}>
       <Table dataSource={props.todos} columns={columns} />
