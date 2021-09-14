@@ -2,9 +2,6 @@ import React from "react";
 import "antd/dist/antd.css";
 import "./index.css";
 
-// React Router Imports
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
 // Redux Imports
 import { Provider } from "react-redux";
 import Reducer from "./Redux/Reducer";
@@ -12,7 +9,6 @@ import { createStore } from "redux";
 
 // Components import
 import ListTodos from "./Screen/ListTodos";
-import AddATodo from "./Screen/AddTodo";
 
 // Redux Persist
 import { persistStore, persistReducer } from "redux-persist";
@@ -33,12 +29,7 @@ function App() {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <Router>
-          <Switch>
-            <Route path="/" exact component={ListTodos} />
-            <Route path="/add" component={AddATodo} />
-          </Switch>
-        </Router>
+        <ListTodos />
       </PersistGate>
     </Provider>
   );
